@@ -1,5 +1,5 @@
-import medlem from './medlem'
-import logføring from './logføring'
+import member from './member'
+import log from './log'
 
-export const schemaTypes = [medlem, logføring];
+export const schemaTypes = [member, log];
 
