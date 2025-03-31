@@ -11,21 +11,26 @@ export default function Header() {
   }, [])
 
   return (
-    <header style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "1rem",
-      borderBottom: "1px solid #ccc"
-    }}>
-      <h1>Gruppe 38</h1>
-      <nav style={{ display: "flex", gap: "1rem" }}>
-        <Link to="/">Hjem</Link>
-        {medlemmer.map((m) => (
-          <Link key={m._id} to={`/medlem/${m._id}`}>
-            {m.name.split(" ")[0]}
-          </Link>
-        ))}
+    <header>
+      <h1 href="/">Gruppe 38</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Hjem</Link>
+          </li>
+          <li>
+            <Link to="member/"></Link>
+          </li>
+          <li>
+            <Link to="member/"></Link>
+          </li>
+          <li>
+            <Link to="member/"></Link>
+          </li>
+          <li>
+            <Link to="member/"></Link>
+          </li>
+        </ul>
       </nav>
     </header>
   )
