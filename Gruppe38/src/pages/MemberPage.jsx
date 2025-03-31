@@ -7,14 +7,23 @@ export default function MemberPage() {
   const [person, setPerson] = useState(null)
 
   useEffect(() => {
-    klient.fetch(`*[_type == "member" && _id == "${id}"][0]{
-      name,
-      email,
-      image{asset->{url}},
-      bio,
-      interests,
-      logs
-    }`).then(data => setPerson(data))
+    klient
+      .fetch(`*[_type == "member" && _id == "${id}"][0]{
+        name,
+        email,
+        image{asset->{url}},
+        bio,
+        interests,
+        logs[]{
+          _key,
+          _createdAt,
+          text
+        }
+      }`)
+      .then(data => {
+        console.log("DATA FRA SANITY:", data)
+        setPerson(data)
+      })
   }, [id])
 
   if (!person) return <p>Laster...</p>
@@ -33,11 +42,11 @@ export default function MemberPage() {
 
       <h2>Loggføringer</h2>
       <ul>
-        {person.logs?.map((log, i) => (
-          <li key={i}>
-            <strong>{log.date}</strong>: {log.text}
-          </li>
-        ))}
+      {person.logs?.map((log) => (
+      <li key={log._key}>
+        <strong>{new Date(log._createdAt).toLocaleDateString("no-NO")}</strong>: {log.text}
+     </li>
+    ))}
       </ul>
     </main>
   )
