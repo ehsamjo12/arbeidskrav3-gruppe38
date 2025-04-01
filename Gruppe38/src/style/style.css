@@ -1,0 +1,61 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+body{
+  background-color: white;
+}
+
+main{
+  max-width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main h1{
+  font-size: 50px;
+  font-weight: bold;
+  color: teal;
+}
+
+section{
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+}
+
+article{
+  width: 300px;
+  border: 2px solid teal;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+article h2{
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+article p{
+  font-size: 25px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  color: teal;
+
+}
+
+article img{
+  width: 200px;
+  height: 200px;
+  padding: 30px;
+}
