@@ -7,9 +7,10 @@ export default function Home() {
   const [medlemmer, setMedlemmer] = useState([])
 
   useEffect(() => {
-    klient.fetch(`*[_type == "member"]{_id, name, email, image{asset->{url}}}`)
-      .then(data => setMedlemmer(data))
+    klient.fetch(`*[_type == "member"]{ _id, name, email, image{asset->{url}},logs[]{ _key, _createdAt, text }}`
+    ).then(data => setMedlemmer(data))
   }, [])
+  
 
   return (
     <main>
@@ -32,6 +33,18 @@ export default function Home() {
           </Link>
           </article>
         ))}
+      </section>
+      <section>
+        <h2>Loggføring</h2>
+        <ul>
+             {medlemmer.flatMap(m =>
+              m.logs?.map(log => (
+          <li key={log._key}>
+              <strong>{new Date(log._createdAt).toLocaleDateString("no-NO")}</strong> – {log.text} ({m.name})
+          </li>
+       )) 
+       )}
+       </ul>
       </section>
     </main>
   )

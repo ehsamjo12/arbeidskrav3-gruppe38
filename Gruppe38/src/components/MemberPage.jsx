@@ -35,8 +35,8 @@ export default function MemberPage() {
       <ul>
         {person.logs?.map((log, i) => (
           <li key={i}>
-            <strong>{log.date}</strong>: {log.text}
-          </li>
+          <strong>{new Date(log.date).toLocaleDateString("no-NO")}</strong>
+        </li>
         ))}
       </ul>
     </main>
