@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { klient } from "../sanity-klient"
 import { Link } from "react-router-dom"
+import Header from "./Header"
 
 export default function Home() {
   const [medlemmer, setMedlemmer] = useState([])
@@ -12,6 +13,7 @@ export default function Home() {
 
   return (
     <main>
+      <Header />
       <h1>Gruppemedlemmer</h1>
       <section>
         {medlemmer.map((person) => (

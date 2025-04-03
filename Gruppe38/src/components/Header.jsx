@@ -11,13 +11,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      padding: "1rem",
-      borderBottom: "1px solid #ccc"
-    }}>
+    <header>
       <h1>Gruppe 38</h1>
       <nav style={{ display: "flex", gap: "1rem" }}>
         <Link to="/">Hjem</Link>
