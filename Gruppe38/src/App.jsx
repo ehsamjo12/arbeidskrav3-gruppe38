@@ -7,6 +7,7 @@ import Header from './pages/Header'
 
 
 function App() {
+<<<<<<< Updated upstream
   return (
     <>
     <Header />
@@ -14,6 +15,10 @@ function App() {
     </>
   )
   
+=======
+  return <Home />
+  const [count, setCount] = useState(0)
+>>>>>>> Stashed changes
 }
 
 export default App
