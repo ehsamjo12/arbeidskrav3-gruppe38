@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { klient } from '../sanity-klient'
+import Header from './Header'
 
 export default function MemberPage() {
   const { id } = useParams()
@@ -13,7 +14,7 @@ export default function MemberPage() {
       image{asset->{url}},
       bio,
       interests,
-      logs
+      logs[]{ _key, date, text }
     }`).then(data => setPerson(data))
   }, [id])
 
@@ -21,6 +22,7 @@ export default function MemberPage() {
 
   return (
     <main>
+      <Header />
       <h1>{person.name}</h1>
       <p>{person.email}</p>
       {person.image && <img src={person.image.asset.url} alt={person.name} style={{ width: "200px" }} />}
@@ -35,7 +37,7 @@ export default function MemberPage() {
       <ul>
         {person.logs?.map((log, i) => (
           <li key={i}>
-          <strong>{new Date(log.date).toLocaleDateString("no-NO")}</strong>
+          <strong>{new Date(log.date).toLocaleDateString("no-NO")}</strong> – {log.text}
         </li>
         ))}
       </ul>

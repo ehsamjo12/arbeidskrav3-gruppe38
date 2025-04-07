@@ -34,8 +34,8 @@ export default function Home() {
           </article>
         ))}
       </section>
-      <section>
-        <h2>Loggføring</h2>
+      <section id="logg">
+        <h2>Loggføring:</h2>
         <ul>
              {medlemmer.flatMap(m =>
               m.logs?.map(log => (

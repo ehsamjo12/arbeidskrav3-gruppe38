@@ -11,9 +11,9 @@ export default function Header() {
   }, [])
 
   return (
-    <header>
-      <h1>Gruppe 38</h1>
-      <nav style={{ display: "flex", gap: "1rem" }}>
+    <header className="header">
+      <h1 className="header">Gruppe 38</h1>
+      <nav className="header">
         <Link to="/">Hjem</Link>
         {medlemmer.map((m) => (
           <Link key={m._id} to={`/medlem/${m._id}`}>
