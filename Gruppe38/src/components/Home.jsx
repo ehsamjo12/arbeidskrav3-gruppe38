@@ -25,7 +25,6 @@ export default function Home() {
                 <img
                   src={person.image.asset.url}
                   alt={`Bilde av ${person.name}`}
-                  style={{ width: "200px", borderRadius: "8px" }}
                 />
               )}
               <h2>{person.name}</h2>

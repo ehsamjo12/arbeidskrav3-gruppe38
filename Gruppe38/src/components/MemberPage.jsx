@@ -25,7 +25,7 @@ export default function MemberPage() {
       <Header />
       <h1>{person.name}</h1>
       <p>{person.email}</p>
-      {person.image && <img src={person.image.asset.url} alt={person.name} style={{ width: "200px" }} />}
+      {person.image && <img src={person.image.asset.url} alt={person.name}/>}
       <p><strong>Biografi:</strong> {person.bio}</p>
 
       <h2>Interesser</h2>
